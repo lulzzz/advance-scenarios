@@ -35,19 +35,13 @@
 
     <ClaimsProvider>
       <DisplayName>Local Account SignIn</DisplayName>
-        <TechnicalProfile Id="login-NonInteractive">
-          <Metadata>
-            <!--Demo action required: Change to your ProxyIdentityExperienceFramework App Id-->
-            <Item Key="client_id">00000000-0000-0000-0000-000000000000</Item>
-
-            <!--Demo action required: Change to your IdentityExperienceFramework App Id-->
-            <Item Key="IdTokenAudience">00000000-0000-0000-0000-000000000000</Item>
-          </Metadata>
-          <InputClaims>
+        <TechnicalProfiles>
+          <TechnicalProfile Id="login-NonInteractive">
+            <InputClaims>
             <!--Demo action required: Change to your ProxyIdentityExperienceFramework App Id-->
             <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="00000000-0000-0000-0000-000000000000" />
 
-            <!--Demo action required: Change to your IdentityExperienceFramework App Id-->
+            <!--Demo action required: Change to your IdentityExperieProxyIdentityExperienceFrameworknceFramework App Id-->
             <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="00000000-0000-0000-0000-000000000000" />
           </InputClaims>
         </TechnicalProfile>
@@ -79,7 +73,7 @@
             <OutputClaim ClaimTypeReferenceId="Verified.strongAuthenticationPhoneNumber" PartnerClaimType="Verified.OfficePhone" />
             <OutputClaim ClaimTypeReferenceId="newPhoneNumberEntered" PartnerClaimType="newPhoneNumberEntered" />
           </OutputClaims>
-          <UseTechnicalProfileForSessionManagement ReferenceId="SM-MFA" />
+          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
         </TechnicalProfile>
 
       </TechnicalProfiles>
